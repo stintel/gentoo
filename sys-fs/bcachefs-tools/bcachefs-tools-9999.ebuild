@@ -71,7 +71,7 @@ src_unpack() {
 		git-r3_src_unpack
 		local module
 		for module in bch_bindgen mount; do
-			S="${S}/rust-src/${module}" cargo_live_src_unpack
+			ECARGO_HOME="${WORKDIR}/cargo_home/${module}" ECARGO_VENDOR="${ECARGO_HOME}/gentoo" S="${S}/rust-src/${module}" cargo_live_src_unpack
 		done
 	else
 		unpacker bcachefs-tools-${MY_COMMIT}.tar.zst
@@ -101,7 +101,7 @@ src_compile() {
 	local module
 	for module in bch_bindgen mount; do
 		pushd "${S}/rust-src/${module}" > /dev/null || die
-			LIBBCACHEFS_LIB="${S}" LIBBCACHEFS_INCLUDE="${S}" cargo_src_compile
+			CARGO_HOME="${WORKDIR}/cargo_home/${module}" LIBBCACHEFS_LIB="${S}" LIBBCACHEFS_INCLUDE="${S}" cargo_src_compile
 		popd > /dev/null || die
 	done
 
