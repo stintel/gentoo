@@ -225,6 +225,7 @@ video_cards_nvk
 video_cards_omap
 video_cards_panfrost
 video_cards_qxl
+video_cards_rocket
 video_cards_siliconmotion
 video_cards_tegra
 video_cards_v3d

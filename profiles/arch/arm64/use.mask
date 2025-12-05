@@ -138,6 +138,7 @@ snapcast
 -video_cards_panfrost
 -video_cards_radeon
 -video_cards_radeonsi
+-video_cards_rocket
 -video_cards_tegra
 -video_cards_v3d
 -video_cards_vc4
